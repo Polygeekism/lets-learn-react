@@ -1,5 +1,6 @@
+I will leave the React created readme stuff below, but I am following this specific tutorial 
 ## Resources
-I will leave the React created readme stuff below, but I am following this specific tutorial https://egghead.io/courses/start-learning-react Leaving comments in where I can and linking other resources needed.
+https://egghead.io/courses/start-learning-react Leaving comments in where I can and linking other resources needed.
 
 PropTypes is apparently deprecated, so use this link to import PropTypes to complete that portion of the tutorial.
  https://www.npmjs.com/package/prop-types
