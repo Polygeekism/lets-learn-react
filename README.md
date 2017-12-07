@@ -1,3 +1,13 @@
+I will leave the React created readme stuff below, but I am following this specific tutorial 
+## Resources
+https://egghead.io/courses/start-learning-react Leaving comments in where I can and linking other resources needed.
+
+PropTypes is apparently deprecated, so use this link to import PropTypes to complete that portion of the tutorial.
+ https://www.npmjs.com/package/prop-types
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
