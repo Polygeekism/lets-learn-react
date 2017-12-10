@@ -1,39 +1,79 @@
 import React from 'react';
 //react.proptypes has been deprecated this replaces that functionality
 //import PropTypes from 'prop-types';
+import ReactDom from 'react-dom';
 
-// //-------Normalize Events-------
-class App extends React.Component{
-  constructor(){
+
+
+//// -------reference component-------
+class App extends React.Component {
+  constructor() {
     super();
-    this.state = {currentEvent: '---'}
-    this.update = this.update.bind(this)
+    this.state = { a: '' }
   }
-  update( e ){
-    this.setState({currentEvent: e.type})
+  update(e) {
+    this.setState({
+      a: ReactDom.findDOMNode(this.a).value,
+      b: this.refs.b.value
+    })
   }
-  render(){
-    return(
+  render() {
+    return (
       <div>
-        <textarea 
-        onKeyPress={this.update}
-        onCopy={this.update}
-        onCut={this.update} 
-        onPaste={this.update} 
-        onFocus={this.update}
-        onBlur={this.update}
-        onDoubleClick={this.update}
-        onTouchStart={this.update}
-        onTouchMove={this.update}
-        onTouchEnd={this.update}
-        cols="30" 
-        rows="10"/>
-        <h1>{this.state.currentEvent}</h1>
-          
+        <Input 
+          ref={ component => this.a = component}
+          type='text'
+          onChange={this.update.bind(this)}
+        /> {this.state.a}
+        <hr />
+        <input 
+          ref='b'
+          type='text'
+          onChange={this.update.bind(this)}
+        /> {this.state.b}
       </div>
     )
   }
 }
+class Input extends React.Component{
+  render(){
+    return <input type='text' onChange={this.props.update}/>
+  }
+}
+////--------end reference----------
+
+// //-------Normalize Events-------
+// class App extends React.Component{
+//   constructor(){
+//     super();
+//     this.state = {currentEvent: '---'}
+//     this.update = this.update.bind(this)
+//   }
+//   update( e ){
+//     this.setState({currentEvent: e.type})
+//   }
+//   render(){
+//     return(
+//       <div>
+//         <textarea 
+//         onKeyPress={this.update}
+//         onCopy={this.update}
+//         onCut={this.update} 
+//         onPaste={this.update} 
+//         onFocus={this.update}
+//         onBlur={this.update}
+//         onDoubleClick={this.update}
+//         onTouchStart={this.update}
+//         onTouchMove={this.update}
+//         onTouchEnd={this.update}
+//         cols="30" 
+//         rows="10"/>
+//         <h1>{this.state.currentEvent}</h1>
+
+//       </div>
+//     )
+//   }
+// }
 
 // //--------end Normalize----------
 // //---------Title example---------
